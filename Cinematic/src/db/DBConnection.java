@@ -4,7 +4,11 @@ import java.sql.*;
 
 public class DBConnection {
 	
-    public Connection connectDB(String name,String user, String pass) 
+	String name="CinematicDB";
+	String user="root";
+	String pass="root";
+	
+    public Connection connectDB() 
         throws SQLException, ClassNotFoundException { 
     	return DriverManager.getConnection("jdbc:mysql://localhost:3306/"+name, user, pass); 
     }
