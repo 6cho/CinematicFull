@@ -197,3 +197,53 @@ function validateRegister(){
     if (f&&l&&e&&ec&&p&&pc&&p==pc&&e==ec)return true;
     return false;    
 }
+
+
+function validateCredit(){
+	let credNum=document.getElementById("credNum").value;
+    let secNum=document.getElementById("secNumber").value;
+    let address=document.getElementById("address").value;
+    let month=document.getElementById("month").value;
+    let year=document.getElementById("year").value;
+    
+    let l1=document.getElementById("label1");
+    let l2=document.getElementById("label2");
+    let l3=document.getElementById("label3");
+    let l4=document.getElementById("label4");
+    let l5=document.getElementById("label5");
+    
+    l1.innerHTML=e  ? "" : "Credit Card number cannot be left empty";
+    l2.innerHTML=ec ? "" : "Security Code cannot be left empty";
+    l3.innerHTML=p  ? "" : "Address cannot be left empty";
+    l4.innerHTML=pc ? "" : "Expiration Month cannot be left empty";
+    l5.innerHTML=e  ? "" : "Expiration Year name cannot be left empty";
+    
+    var credRegex = new RegExp(/^(\d{16})?$/);
+    if(credRegex.test(credNum) == false){
+    	l1.innerHTML="Credit Card number must be 16 digits";
+    }
+    
+    var secRegex = new RegExp(/^(\d{3})?$/);
+    if (secRegex.test(secNum) == false){
+    	l2.innerHTML = "Security code must be 3 digits";
+    }
+    
+    var addRegex = new RegExp(/[a-zA-Z0-9]+/)
+    if(addRegex.test(address) == false){
+    	l3.innerHTML = "Please enter valid address";
+    }
+    
+    var monthRegex = new RegExp(/^(0?[1-9]|1[012])$/);
+    if(monthRegex.test(month) == false){
+    	l4.innerHTML = "Please enter a valid month (1 - 12)";
+    }
+    
+    var yearRegex = new RegExp(/^(\d{4})?$/)
+    if(yearRegex.test(year) == false){
+    	l5.innerHTML = "Please enter a valid year";
+    }
+    
+    if(credNum&&secNum&&address&&month&&year)return true;
+    return false;
+	
+}
