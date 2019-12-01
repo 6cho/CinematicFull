@@ -27,7 +27,7 @@ public class IndexServlet extends HttpServlet {
 		
 		try {
 			DBConnection db = new DBConnection();
-			Connection con = db.connectDB("CinematicDB","root","root");
+			Connection con = db.connectDB();
 			String sqlSt = "SELECT Title,Poster FROM Movies";
 			PreparedStatement st = con.prepareStatement(sqlSt); 
 			ResultSet rs = st.executeQuery();

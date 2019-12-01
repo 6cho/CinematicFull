@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		try { 	
 			DBConnection db=new DBConnection();		
-			Connection con = db.connectDB("CinematicDB","root","root");
+			Connection con = db.connectDB();
 			String sqlSt="SELECT * FROM Users WHERE email=?";
 			PreparedStatement st = con.prepareStatement(sqlSt); 
 			st.setString(1,email);
