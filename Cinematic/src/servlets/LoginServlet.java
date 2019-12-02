@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 		
 		try { 	
 			DBConnection db=new DBConnection();		
-			Connection con = db.connectDB("CinematicDB","root","root");
+			Connection con = db.connectDB();
 			String sqlSt="SELECT * FROM Users WHERE email=?";
 			PreparedStatement st = con.prepareStatement(sqlSt); 
 			st.setString(1,emailCurrent);
@@ -63,5 +63,6 @@ public class LoginServlet extends HttpServlet {
 			return;		
 			
 		} catch(Exception e) {System.out.println(e);}
+		
 	}
 }
