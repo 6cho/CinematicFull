@@ -247,3 +247,53 @@ function validateCredit(){
     return false;
 	
 }
+
+
+function validateAdminRegistration(){
+	let e=document.getElementById("email").value;
+	let p=document.getElementById("pass").value;
+	let f=document.getElementById("fname").value;
+    let l=document.getElementById("lname").value;
+    
+    let l1=document.getElementById("label1");
+    let l2=document.getElementById("label2");
+    let l3=document.getElementById("label3");
+    let l4=document.getElementById("label4");
+    
+    l1.innerHTML=e  ? "" : "Email cannot be left empty";
+    l2.innerHTML=ec ? "" : "Password cannot be left empty";
+    l3.innerHTML=p  ? "" : "First name cannot be left empty";
+    l4.innerHTML=pc ? "" : "Last name cannot be left empty";
+    
+    if(e&&p&&f&&l) return true;
+    return false;
+}
+
+function validateAddMovie(){
+	let t=document.getElementById("title").value;
+	let s=document.getElementById("synopsis").value;
+	let p=document.getElementById("poster").value;
+    let tr=document.getElementById("trailer").value;
+    let d=document.getElementById("date").value;
+    
+    let l1=document.getElementById("label1");
+    let l2=document.getElementById("label2");
+    let l3=document.getElementById("label3");
+    let l4=document.getElementById("label4");
+    let l5=document.getElementById("label5");
+    
+   // var dateRegex = new RegExp(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/);
+    //if(dateRegex.test(d) == false){
+    //	l5.innerHTML = "Please enter valid date (YYYY-MM-DD)";
+    //}
+    
+    l1.innerHTML=e  ? "" : "Title cannot be left empty";
+    l2.innerHTML=ec ? "" : "Synopsis cannot be left empty";
+    l3.innerHTML=p  ? "" : "Poster Link cannot be left empty";
+    l4.innerHTML=pc ? "" : "Trailer Link cannot be left empty";
+    l5.innerHTML=pc ? "" : "Date cannot be left empty";
+    
+    if(t&&s&&p&&tr) return true;
+    return false;
+	
+}
